@@ -6,13 +6,13 @@
 #    By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/01 13:42:26 by sbalk             #+#    #+#              #
-#    Updated: 2024/02/06 13:16:29 by sbalk            ###   ########.fr        #
+#    Updated: 2024/02/06 21:05:24 by sbalk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= phonebook
 CC			= c++
-CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -fsanitize=address -g
+CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98
 RM			= rm
 SRC_DIR		= src/
 OBJ_DIR		= obj/
