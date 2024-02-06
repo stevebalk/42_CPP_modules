@@ -6,40 +6,38 @@
 /*   By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:52:06 by sbalk             #+#    #+#             */
-/*   Updated: 2024/02/01 13:52:27 by sbalk            ###   ########.fr       */
+/*   Updated: 2024/02/06 19:57:23 by sbalk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
-using namespace std;
-class student
-{
-    int rno;
-    char name[50];
-    double fee;
-    public:
-    student()
-    {
-        cout<<"Enter the RollNo:";
-        cin>>rno;
-        cout<<"Enter the Name:";
-        cin>>name;
-        cout<<"Enter the Fee:";    
-        cin>>fee;
-    }    
-     
- 
- 
-    void display()
-    {
-        cout<<endl<<rno<<"\t"<<name<<"\t"<<fee;
-    }
-};
- 
+#include <iostream>
+#include <cstdlib>
+#include <limits>
+#include "PhoneBook.hpp"
+
 int main()
 {
-    student s;  //constructor gets called automatically when we create the object of the class
-    s.display();
-    return 0;
- 
+	PhoneBook	book;
+	std::string	input;
+
+	while (true)
+	{
+		std::cout << "1. ADD\n2. SEARCH\n0. EXIT\nEnter a command : ";
+		if (!std::getline(std::cin, input)) {
+			if (std::cin.eof()) {
+				std::cout << "\nInput ended. Exiting.\n\n";
+				return 0;
+			} else {
+				std::cerr << "\nError reading input. Exiting.\n\n";
+				return 1;
+			}
+		}
+		if (input == "EXIT" || input == "0")
+			break;
+		else if (input == "ADD" || input == "1")
+			book.addContact();
+		else if (input == "SEARCH" || input == "2")
+			book.searchContact();
+	}
+	return 0;
 }

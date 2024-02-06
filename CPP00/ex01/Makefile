@@ -6,13 +6,13 @@
 #    By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/01 13:42:26 by sbalk             #+#    #+#              #
-#    Updated: 2024/02/01 14:02:57 by sbalk            ###   ########.fr        #
+#    Updated: 2024/02/06 13:16:29 by sbalk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= phonebook
 CC			= c++
-CFLAGS		= -Werror -Wall -Wextra -std=c++98 -fsanitize=address
+CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -fsanitize=address -g
 RM			= rm
 SRC_DIR		= src/
 OBJ_DIR		= obj/
@@ -32,6 +32,8 @@ CYAN = \033[0;96m
 WHITE = \033[0;97m
 
 SRC_FILES	=	main \
+				PhoneBook \
+				Contact
 
 SRC				=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))
 OBJ				=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
