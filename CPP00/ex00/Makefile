@@ -6,13 +6,13 @@
 #    By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/01 13:42:26 by sbalk             #+#    #+#              #
-#    Updated: 2024/02/01 14:03:54 by sbalk            ###   ########.fr        #
+#    Updated: 2024/02/06 21:05:51 by sbalk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= megaphone
 CC			= c++
-CFLAGS		= -Werror -Wall -Wextra -std=c++98 -fsanitize=address
+CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98
 RM			= rm
 SRC_DIR		= src/
 OBJ_DIR		= obj/
