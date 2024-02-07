@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 
+NAME		= zombie
 CC			= c++
-CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -g -fsanitize=address
+CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -fsanitize=address
 RM			= rm
 SRC_DIR		= src/
 OBJ_DIR		= obj/
@@ -32,6 +32,9 @@ CYAN = \033[0;96m
 WHITE = \033[0;97m
 
 SRC_FILES	=	main \
+				Zombie \
+				newZombie \
+				randomChump \
 
 SRC				=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))
 OBJ				=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
