@@ -6,13 +6,13 @@
 #    By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/06 22:00:02 by sbalk             #+#    #+#              #
-#    Updated: 2024/02/06 22:02:04 by sbalk            ###   ########.fr        #
+#    Updated: 2024/02/08 18:14:24 by sbalk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 
+NAME		= sedForLosers
 CC			= c++
-CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -g -fsanitize=address
+CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -fsanitize=address
 RM			= rm
 SRC_DIR		= src/
 OBJ_DIR		= obj/
