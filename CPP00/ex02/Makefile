@@ -6,13 +6,13 @@
 #    By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/06 20:57:43 by sbalk             #+#    #+#              #
-#    Updated: 2024/02/06 21:05:16 by sbalk            ###   ########.fr        #
+#    Updated: 2024/02/08 14:31:04 by sbalk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= account
 CC			= c++
-CFLAGS		= -Werror -Wall -Wextra -Wpedantic
+CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98
 RM			= rm
 SRC_DIR		= src/
 OBJ_DIR		= obj/

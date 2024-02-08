@@ -6,13 +6,13 @@
 /*   By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:02:12 by sbalk             #+#    #+#             */
-/*   Updated: 2024/02/08 14:10:46 by sbalk            ###   ########.fr       */
+/*   Updated: 2024/02/08 14:37:02 by sbalk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
-#include <chrono>
 #include <iomanip>
+#include <ctime>
 #include <iostream>
 
 int Account::_nbAccounts = 0;
@@ -119,14 +119,9 @@ void Account::displayStatus(void) const {
 /*                          PRIVATE                                 */
 /********************************************************************/
 
-void Account::_displayTimestamp(void) {
-	time_t now = time(NULL);
-	struct tm *now_tm = localtime(&now);
-	std::cout << std::setfill('0')
-			  << "[" << (now_tm->tm_year + 1900)
-			  << std::setw(2) << now_tm->tm_mon + 1
-			  << std::setw(2) << now_tm->tm_mday << "_"
-			  << std::setw(2) << now_tm->tm_hour
-			  << std::setw(2) << now_tm->tm_min
-			  << std::setw(2) << now_tm->tm_sec << "] ";
+void Account::_displayTimestamp() {
+	time_t t = time(NULL);
+	char buffer[20];
+	strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", localtime(&t));
+	std::cout << buffer;
 }
