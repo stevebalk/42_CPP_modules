@@ -6,13 +6,13 @@
 #    By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/06 22:00:02 by sbalk             #+#    #+#              #
-#    Updated: 2024/02/06 22:02:04 by sbalk            ###   ########.fr        #
+#    Updated: 2024/02/08 12:57:20 by sbalk            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 
+NAME		= zombieHorde
 CC			= c++
-CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -g -fsanitize=address
+CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -fsanitize=address
 RM			= rm
 SRC_DIR		= src/
 OBJ_DIR		= obj/
@@ -32,6 +32,8 @@ CYAN = \033[0;96m
 WHITE = \033[0;97m
 
 SRC_FILES	=	main \
+				Zombie \
+				zombieHorde \
 
 SRC				=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))
 OBJ				=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
