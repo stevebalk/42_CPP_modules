@@ -6,7 +6,7 @@
 /*   By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:52:10 by sbalk             #+#    #+#             */
-/*   Updated: 2024/02/01 16:56:55 by sbalk            ###   ########.fr       */
+/*   Updated: 2024/02/08 14:10:12 by sbalk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,22 @@ void Contact::setSecret(std::string str) {
 	this->secret = str;
 }
 
-const std::string&	Contact::getFirstName(void) {
+const std::string &Contact::getFirstName(void) {
 	return this->first_name;
 }
 
-const std::string&	Contact::getLastName(void) {
+const std::string &Contact::getLastName(void) {
 	return this->last_name;
 }
 
-const std::string&	Contact::getNickname(void) {
+const std::string &Contact::getNickname(void) {
 	return this->nickname;
 }
 
-const std::string&	Contact::getPhoneNumber(void) {
+const std::string &Contact::getPhoneNumber(void) {
 	return this->phone_number;
 }
 
-const std::string&	Contact::getSecret(void) {
+const std::string &Contact::getSecret(void) {
 	return this->secret;
 }

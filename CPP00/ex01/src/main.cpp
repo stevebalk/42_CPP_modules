@@ -6,22 +6,20 @@
 /*   By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:52:06 by sbalk             #+#    #+#             */
-/*   Updated: 2024/02/06 19:57:23 by sbalk            ###   ########.fr       */
+/*   Updated: 2024/02/08 14:10:16 by sbalk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstdlib>
-#include <limits>
 #include "PhoneBook.hpp"
+#include <cstdlib>
+#include <iostream>
+#include <limits>
 
-int main()
-{
-	PhoneBook	book;
-	std::string	input;
+int main() {
+	PhoneBook book;
+	std::string input;
 
-	while (true)
-	{
+	while (true) {
 		std::cout << "1. ADD\n2. SEARCH\n0. EXIT\nEnter a command : ";
 		if (!std::getline(std::cin, input)) {
 			if (std::cin.eof()) {
