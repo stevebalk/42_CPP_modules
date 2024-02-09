@@ -24,6 +24,9 @@ do
 	simulate_input "Dark Secret huuuhhhuuu"
 done
 
+simulate_input "2"
+simulate_input "1"
+
 for number in {1..8}
 do
 	simulate_input "1"
@@ -34,6 +37,9 @@ do
 	simulate_input "OMG I'm Bob Odenkirk"
 done
 
+simulate_input "2"
+simulate_input "1"
+
 simulate_input "1"
 simulate_input "Samantha"
 simulate_input "Carter"
@@ -43,6 +49,7 @@ simulate_input "Dark Secret huuuhhhuuu"
 
 # Test case 2: Searching for a contact
 simulate_input "2"
+simulate_input "1"
 
 # # Test case 3: Exiting the program
 # simulate_input "0"

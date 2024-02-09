@@ -12,7 +12,7 @@
 
 NAME		= phonebook
 CC			= c++
-CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98
+CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -fsanitize=address
 RM			= rm
 SRC_DIR		= src/
 OBJ_DIR		= obj/
