@@ -1,7 +1,8 @@
 #include "Harl.hpp"
 
 Harl::Harl() {
-	std::cout << "Harl enters the restaurant and takes a seat." << std::endl;
+	std::cout << "Harl enters the restaurant and takes a seat."
+			  << std::endl << std::endl;
 }
 
 Harl::~Harl() {
@@ -9,30 +10,35 @@ Harl::~Harl() {
 }
 
 void Harl::debug() {
-	std::cout << "I love having extra bacon for my "
+	std::cout << "[ DEBUG ]" << std::endl
+			  << "I love having extra bacon for my "
 			  << "7XL-double-cheese-triple-pickle-special- "
-			  << "ketchup burger. I really do!"
-			  << std::endl;
+			  << "ketchup burger." << std::endl << "I really do!"
+			  << std::endl << std::endl;
 }
 
 void Harl::info() {
-	std::cout << "I cannot believe adding extra bacon costs more money. "
-			  << "You didn’t put "
+	std::cout << "[ INFO ]" << std::endl
+			  << "I cannot believe adding extra bacon costs more money. "
+			  << std::endl << "You didn’t put "
 			  << "enough bacon in my burger! If you did, I wouldn’t be "
 			  << "asking for more! "
-			  << std::endl;
+			  << std::endl << std::endl;
 }
 
 void Harl::warning() {
-	std::cout << "I think I deserve to have some extra bacon for free. "
-			  << "I’ve been coming for "
+	std::cout << "[ WARNING ]" << std::endl
+			  << "I think I deserve to have some extra bacon for free. "
+			  << std::endl << "I’ve been coming for "
 			  << "years whereas you started working here since last month."
-			  << std::endl;
+			  << std::endl << std::endl;
 }
 
 void Harl::error() {
-	std::cout << "This is unacceptable! I want to speak to the manager now."
-			  << std::endl;
+	std::cout << "[ ERROR ]" << std::endl
+			  << "This is unacceptable! "
+			  << "I want to speak to the manager now."
+			  << std::endl << std::endl;
 }
 
 void Harl::complain(std::string level) {
@@ -44,5 +50,5 @@ void Harl::complain(std::string level) {
 			return;
 		}
 	}
-	std::cout << "Harl is speechless!" << std::endl;
+	std::cout << "Harl is speechless!" << std::endl << std::endl;
 }
