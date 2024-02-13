@@ -1,4 +1,4 @@
-NAME		= harl_filter
+NAME		= harlFilter
 CXX			= c++
 CXXFLAGS	= -Werror -Wall -Wextra -Wpedantic -std=c++98
 RM			= rm
@@ -8,7 +8,6 @@ OBJ_DIR		= obj/
 INCLUDE		= -I include
 
 # Colors
-
 DEF_COLOR = \033[0;39m
 GRAY = \033[0;90m
 RED = \033[0;91m
@@ -20,20 +19,27 @@ CYAN = \033[0;96m
 WHITE = \033[0;97m
 
 SRC_FILES	=	main \
+				Harl
 
 SRC				=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))
 OBJ				=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 OBJ_DIRS		=	$(addprefix $(OBJ_DIR), $(SRC_FILES))
 
+#Debug 
+ifeq ($(DEBUG), 1)
+   OPTS = -g
+endif
+
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+			@$(CXX) $(CXXFLAGS) $(OPTS) $(OBJ) -o $(NAME)
+			@echo "$(GREEN)Created executable: $(WHITE)$(NAME)$(DEF_COLOR)"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 			@mkdir -p $(OBJ_DIRS)
 			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
-			@$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
+			@$(CXX) $(CXXFLAGS) $(OPTS) $(INCLUDE) -c $< -o $@
 
 clean:
 			@$(RM) -rf $(OBJ_DIR)
@@ -47,6 +53,6 @@ re:			fclean all
 			@echo "$(GREEN)Cleaned and rebuilt everything for $(NAME)!$(DEF_COLOR)"
 
 run: all clean
-			./$(NAME)
+			./$(NAME) "DEBUG"
 
 .PHONY:		all clean fclean re run
