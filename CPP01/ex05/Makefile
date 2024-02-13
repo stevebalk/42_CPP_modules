@@ -1,6 +1,6 @@
 NAME		= harl
-CC			= c++
-CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -g -fsanitize=address
+CXX			= c++
+CXXFLAGS	= -Werror -Wall -Wextra -Wpedantic -std=c++98
 RM			= rm
 SRC_DIR		= src/
 OBJ_DIR		= obj/
@@ -29,12 +29,12 @@ OBJ_DIRS		=	$(addprefix $(OBJ_DIR), $(SRC_FILES))
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+			@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
 			@mkdir -p $(OBJ_DIRS)
 			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
-			@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+			@$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
 			@$(RM) -rf $(OBJ_DIR)
