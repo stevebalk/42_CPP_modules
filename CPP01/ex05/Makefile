@@ -1,16 +1,4 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: sbalk <sbalk@student.fr>                   +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/06 22:00:02 by sbalk             #+#    #+#              #
-#    Updated: 2024/02/06 22:02:04 by sbalk            ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-NAME		= 
+NAME		= harl
 CC			= c++
 CFLAGS		= -Werror -Wall -Wextra -Wpedantic -std=c++98 -g -fsanitize=address
 RM			= rm
@@ -32,6 +20,7 @@ CYAN = \033[0;96m
 WHITE = \033[0;97m
 
 SRC_FILES	=	main \
+				Harl
 
 SRC				=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))
 OBJ				=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
