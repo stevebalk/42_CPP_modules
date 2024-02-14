@@ -56,16 +56,16 @@ void Harl::error() {
 void Harl::complain(std::string level) {
 	setFilterLevel(level);
 	switch (_filter_level) {
-		case 0:
+		case DEBUG:
 			this->debug();
 			/* fall through */
-		case 1:
+		case INFO:
 			this->info();
 			/* fall through */
-		case 2:
+		case WARNING:
 			this->warning();
 			/* fall through */
-		case 3:
+		case ERROR:
 			this->error();
 			break;
 		default:
