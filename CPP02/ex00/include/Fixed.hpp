@@ -1,6 +1,8 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
+// https://www.h-schmidt.net/FloatConverter/IEEE754.html
+
 #include <iostream>
 
 class Fixed {
