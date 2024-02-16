@@ -46,7 +46,6 @@ int main( void ) {
 // 	std::cout << "++a = " << g << std::endl;
 // 	Fixed h = a++; // Post-increment
 // 	std::cout << "a++ = " << h << std::endl;
-// 	std::cout << "a == " << a << std::endl;
 // 	Fixed i = --b; // Pre-decrement
 // 	std::cout << "--b = " << i << std::endl;
 // 	Fixed j = b--; // Post-decrement

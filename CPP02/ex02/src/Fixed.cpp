@@ -130,7 +130,7 @@ Fixed &Fixed::operator++(void) {
 
 Fixed Fixed::operator++(int) {
 	Fixed temp(*this);
-	this->fixed_point_nb++;
+	++(*this);
 	return temp;
 }
 
@@ -141,6 +141,6 @@ Fixed &Fixed::operator--(void) {
 
 Fixed Fixed::operator--(int) {
 	Fixed temp(*this);
-	this->fixed_point_nb--;
+	--(*this);
 	return temp;
 }
