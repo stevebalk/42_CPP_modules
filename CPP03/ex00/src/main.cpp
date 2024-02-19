@@ -7,7 +7,7 @@ int main() {
 
 	{
 		for (int i = 0; i < 11; i++) {
-		cla4p_tp.attack("Barrel");
+			cla4p_tp.attack("Barrel");
 		}
 	}
 	{
