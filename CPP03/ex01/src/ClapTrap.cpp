@@ -6,15 +6,15 @@
 
 void ClapTrap::attack(const std::string &target) {
 	if (_energy_points > 0 && _health_points > 0) {
-		std::cout << "Claptrap " << _name << " attacks " << target
+		std::cout << "| ClaptTrap | " << _name << " attacks " << target
 				  << ", causing " << _attack_dmg << " points of damage!"
 				  << std::endl;
 		_energy_points--;
 	} else if (_health_points <= 0) {
-		std::cout << "ClapTrap " << _name << " doesn't clap anymore T_T"
+		std::cout << "| ClaptTrap | " << _name << " doesn't clap anymore T_T"
 				  << std::endl;
 	} else {
-		std::cout << "ClapTrap " << _name << " could not attack " << target
+		std::cout << "| ClaptTrap | " << _name << " couldn't attack " << target
 				  << " because it's out of energy!" << std::endl;
 	}
 }
@@ -22,13 +22,13 @@ void ClapTrap::attack(const std::string &target) {
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (_health_points > 0) {
 		_health_points -= amount;
-		std::cout << "ClapTrap " << _name << " got hit for " << amount << "! Current hitpoints: "
+		std::cout << "| ClaptTrap | " << _name << " got hit for " << amount << "! Current hitpoints: "
 				  << _health_points << std::endl;
 		if (_health_points <= 0) {
-			std::cout << "ClapTrap " << _name << " got deadly wounded! Oh no!" << std::endl;
+			std::cout << "| ClaptTrap | " << _name << " got deadly wounded! Oh no!" << std::endl;
 		}
 	} else {
-		std::cout << "ClapTrap " << _name << "s lifeless body got hit again and again." << std::endl;
+		std::cout << "| ClaptTrap | " << _name << "s lifeless body got hit again and again." << std::endl;
 		std::cout << "Does it feel good to smack this poor little guy over and over you monster?";
 		std::cout << std::endl;
 	}
@@ -36,15 +36,15 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (_energy_points > 0 && _health_points > 0) {
-		std::cout << "Claptrap " << _name << " repairs himself for " << amount
+		_health_points += amount;
+		std::cout << "| ClaptTrap | " << _name << " repairs himself for " << amount
 				  << " healthpoints! Current hitpoints: " << _health_points << std::endl;
 		_energy_points--;
-		_health_points += amount;
 	} else if (_health_points <= 0) {
-		std::cout << "ClapTrap " << _name << " doesn't clap anymore T_T"
+		std::cout << "| ClaptTrap | " << _name << " doesn't clap anymore T_T"
 				  << std::endl;
 	} else {
-		std::cout << "ClapTrap " << _name << " could not repair, because it's out of energy!"
+		std::cout << "| ClaptTrap | " << _name << " could not repair, because it's out of energy!"
 				  << std::endl;
 	}
 }
@@ -58,7 +58,7 @@ ClapTrap::ClapTrap() :
 		_health_points(10),
 		_energy_points(10),
 		_attack_dmg(0) {
-	std::cout << _name << " says: Hello World! I'm the original!" << std::endl;
+	std::cout << "| ClaptTrap | " <<  _name << " says: Hello World! I'm the original!" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) :
@@ -66,7 +66,7 @@ ClapTrap::ClapTrap(std::string name) :
 		_health_points(10),
 		_energy_points(10),
 		_attack_dmg(0) {
-	std::cout << _name << " says: Hello World!" << std::endl;
+	std::cout << "| ClaptTrap | " << _name << " says: Hello World!" << std::endl;
 }
 
 /********************************************************************/
@@ -74,7 +74,7 @@ ClapTrap::ClapTrap(std::string name) :
 /********************************************************************/
 
 ClapTrap::~ClapTrap() {
-	std::cout << _name << " says: Bye cruel world!" << std::endl;
+	std::cout << "| ClaptTrap | " << _name << " says: Bye cruel world!" << std::endl;
 }
 
 /********************************************************************/

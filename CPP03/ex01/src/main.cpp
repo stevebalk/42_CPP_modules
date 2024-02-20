@@ -2,17 +2,29 @@
 #include "ScavTrap.hpp"
 
 int main() {
-	ClapTrap cl4p_tp;
-	ScavTrap sc4p_tp;
-	ScavTrap imARealBoy("Pinocchio");
+	ClapTrap ct("ClapO");
+	ScavTrap st("ScvaO");
+
+	// ClapTrap
+	std::cout << std::endl;
+	{
+		ct.attack("Barrel");
+		ct.beRepaired(2);
+		ct.takeDamage(5);
+	}
 
 	std::cout << std::endl;
-	cl4p_tp.attack("Barrel");
+
+	// ScavTrap
+	{
+		st.attack("the air");
+		st.beRepaired(20);
+		st.takeDamage(80);
+		st.guardgate();
+		st.takeDamage(40);
+		st.attack("whatever");
+	}
+
 	std::cout << std::endl;
-	sc4p_tp.attack("the air");
-	std::cout << std::endl;
-	sc4p_tp.takeDamage(6);
-	std::cout << std::endl;
-	imARealBoy.guardgate();
-	std::cout << std::endl;
+
 }

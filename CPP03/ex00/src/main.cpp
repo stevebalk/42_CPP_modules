@@ -17,8 +17,8 @@ int main() {
 		}
 		bob.attack("the air");
 		std::cout << std::endl;
-		for (int i = 0; i < 21; i++) {
-			bob.takeDamage(1);
+		for (int i = 0; i < 3; i++) {
+			bob.takeDamage(10);
 		}
 	}
 	std::cout << std::endl;
