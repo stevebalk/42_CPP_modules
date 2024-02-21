@@ -86,6 +86,8 @@ ClapTrap::ClapTrap(const ClapTrap &other) :
 		_health_points(other._health_points),
 		_energy_points(other._energy_points),
 		_attack_dmg(other._attack_dmg) {
+		std::cout << "| ClapTrap  | " << _name << " Copy constructor called" << std::endl;
+
 }
 
 /********************************************************************/
@@ -99,5 +101,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 		_energy_points = other._energy_points;
 		_attack_dmg = other._attack_dmg;
 	}
+		std::cout << "| ClapTrap  | " << _name << " Copy operator called" << std::endl;
 	return *this;
 }

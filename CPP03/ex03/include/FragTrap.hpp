@@ -15,4 +15,4 @@ public:
 	void highFiveGuys(void);
 };
 
-#endif
+#endif //FRAGTRAP_HPP

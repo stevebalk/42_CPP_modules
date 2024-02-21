@@ -57,7 +57,25 @@ ScavTrap::~ScavTrap() {
 /*                          COPY CONSTRUCTOR                        */
 /********************************************************************/
 
+ScavTrap::ScavTrap(const ScavTrap &other) :
+		ClapTrap(other._name) {
+	_health_points = other._health_points;
+	_energy_points = other._energy_points;
+	_attack_dmg = other._attack_dmg;
+	std::cout << "| ScavTrap  | " << _name << " Copy constructor called" << std::endl;
+}
 
 /********************************************************************/
 /*                          OPERATOR OVERLOAD                       */
 /********************************************************************/
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &rhs) {
+	if (this != &rhs) {
+		_name = rhs._name;
+		_health_points = rhs._health_points;
+		_energy_points = rhs._energy_points;
+		_attack_dmg = rhs._attack_dmg;
+	}
+	std::cout << "| ScavTrap  | " << _name << " Copy operator called" << std::endl;
+	return *this;
+}

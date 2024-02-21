@@ -16,4 +16,4 @@ public:
 	void guardgate();
 };
 
-#endif
+#endif // SCAVTRAP_HPP
