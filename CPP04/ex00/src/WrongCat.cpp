@@ -10,7 +10,8 @@ WrongCat::~WrongCat() {
 	std::cout << RED "| WrongCat    | got destroyed." C_RESET << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other) {
+WrongCat::WrongCat(const WrongCat &other) :
+		WrongAnimal(other) {
 	_type = other._type;
 	std::cout << "| WrongCat    | copy constructor called." << std::endl;
 }
@@ -23,6 +24,6 @@ WrongCat &WrongCat::operator=(const WrongCat &rhs) {
 	return *this;
 }
 
-void WrongCat::makeSound() const{
+void WrongCat::makeSound() const {
 	std::cout << "| WrongCat    | makes \"Meow Meow brr brr\"." << std::endl;
 }

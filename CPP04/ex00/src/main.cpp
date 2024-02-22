@@ -34,7 +34,7 @@ void wrongAnimalClassTests() {
 	printHeader("Wrong Animal tests", BLUE);
 	{
 		std::cout << BOLD "WrongAnimal" C_RESET << std::endl;
-		const WrongAnimal *	animal = new WrongAnimal();
+		const WrongAnimal *animal = new WrongAnimal();
 		std::cout << "| WrongCat    | type: " << animal->getType() << std::endl;
 		animal->makeSound();
 		delete animal;
@@ -42,7 +42,7 @@ void wrongAnimalClassTests() {
 	}
 	{
 		std::cout << BOLD "WrongCat by WrongCat class" C_RESET << std::endl;
-		const WrongCat *	cat = new WrongCat();
+		const WrongCat *cat = new WrongCat();
 		std::cout << "| WrongCat    | type: " << cat->getType() << std::endl;
 		cat->makeSound();
 		delete cat;
@@ -50,7 +50,7 @@ void wrongAnimalClassTests() {
 	}
 	{
 		std::cout << BOLD "WrongCat by WrongAnimal parent class" C_RESET << std::endl;
-		const WrongAnimal * cat = new WrongCat();
+		const WrongAnimal *cat = new WrongCat();
 		std::cout << "| WrongCat    | type: " << cat->getType() << std::endl;
 		cat->makeSound();
 		delete cat;
@@ -62,7 +62,7 @@ void correctAnimalClassTests() {
 	printHeader("Correct Animal tests", BLUE);
 	{
 		std::cout << BOLD "Animal" C_RESET << std::endl;
-		const Animal *	animal = new Animal();
+		const Animal *animal = new Animal();
 		std::cout << "| Animal | type: " << animal->getType() << std::endl;
 		animal->makeSound();
 		delete animal;
@@ -70,7 +70,7 @@ void correctAnimalClassTests() {
 	}
 	{
 		std::cout << BOLD "Cat by cat class" C_RESET << std::endl;
-		const Cat *	cat = new Cat();
+		const Cat *cat = new Cat();
 		std::cout << "| Cat    | type: " << cat->getType() << std::endl;
 		cat->makeSound();
 		delete cat;
@@ -78,7 +78,7 @@ void correctAnimalClassTests() {
 	}
 	{
 		std::cout << BOLD "Cat by animal parent class" C_RESET << std::endl;
-		const Animal * cat = new Cat();
+		const Animal *cat = new Cat();
 		std::cout << "| Animal | type: " << cat->getType() << std::endl;
 		cat->makeSound();
 		delete cat;
@@ -86,15 +86,15 @@ void correctAnimalClassTests() {
 	}
 	{
 		std::cout << BOLD "Dog by dog class" C_RESET << std::endl;
-		const Dog *	dog = new Dog();
+		const Dog *dog = new Dog();
 		std::cout << "| Dog    | type: " << dog->getType() << std::endl;
 		dog->makeSound();
 		delete dog;
 		std::cout << std::endl;
 	}
 	{
-		std::cout << BOLD "Dog by animal parent class" C_RESET << std::endl ;
-		const Animal * dog = new Dog();
+		std::cout << BOLD "Dog by animal parent class" C_RESET << std::endl;
+		const Animal *dog = new Dog();
 		std::cout << "| Animal | type: " << dog->getType() << std::endl;
 		dog->makeSound();
 		delete dog;
@@ -102,13 +102,12 @@ void correctAnimalClassTests() {
 	}
 }
 
-void	subjectTests(void)
-{
+void subjectTests(void) {
 	printHeader("Subject tests", BLUE);
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	
+	const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
+
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
