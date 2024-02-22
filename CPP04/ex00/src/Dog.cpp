@@ -4,7 +4,6 @@
 Dog::Dog() {
 	_type = "Dog";
 	std::cout << GREEN "| Dog    | default constructor called." C_RESET << std::endl;
-	;
 }
 
 Dog::~Dog() {
