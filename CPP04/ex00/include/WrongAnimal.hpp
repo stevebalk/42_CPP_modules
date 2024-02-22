@@ -17,7 +17,6 @@ public:
 protected:
 	std::string _type;
 
-private:
 };
 
 #endif // WRONG_ANIMAL_HPP

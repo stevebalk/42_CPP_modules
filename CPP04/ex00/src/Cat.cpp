@@ -2,7 +2,7 @@
 #include "Colors.h"
 
 Cat::Cat() {
-	Animal::_type = "Cat";
+	_type = "Cat";
 	std::cout << GREEN "| Cat    | default constructor called." C_RESET << std::endl;
 }
 

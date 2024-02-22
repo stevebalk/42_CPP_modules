@@ -1,8 +1,8 @@
 #include "WrongCat.hpp"
 #include "Colors.h"
 
-WrongCat::WrongCat() :
-		_type("WrongCat") {
+WrongCat::WrongCat() {
+	_type = "WrongCat";
 	std::cout << GREEN "| WrongCat    | default constructor called." C_RESET << std::endl;
 }
 

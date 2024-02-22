@@ -14,10 +14,6 @@ public:
 
 	void makeSound(void) const;
 
-protected:
-	std::string _type;
-
-private:
 };
 
 #endif // WRONG_CAT_HPP
