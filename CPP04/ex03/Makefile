@@ -20,9 +20,10 @@ WHITE = \033[0;97m
 
 SRC_FILES	=	main \
 				AMateria \
-				ICharacter \
-
-				
+				Ice \
+				Cure \
+				Character \
+				MateriaSource \
 
 SRC				=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))
 OBJ				=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -30,7 +31,7 @@ OBJ_DIRS		=	$(addprefix $(OBJ_DIR), $(SRC_FILES))
 
 #Debug 
 ifeq ($(DEBUG), 1)
-	OPTS = -g -Wshadow -fsanitize=address
+	OPTS = -g
 endif
 
 all:		$(NAME)
