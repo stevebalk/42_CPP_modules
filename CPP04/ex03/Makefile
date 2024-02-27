@@ -24,6 +24,7 @@ SRC_FILES	=	main \
 				Cure \
 				Character \
 				MateriaSource \
+				PrintHeader
 
 SRC				=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))
 OBJ				=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

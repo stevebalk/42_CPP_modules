@@ -15,8 +15,8 @@ public:
 
 	std::string const &getName() const;
 	void equip(AMateria *m);
-	void unequip(size_t idx);
-	void use(size_t idx, ICharacter &target);
+	void unequip(int idx);
+	void use(int idx, ICharacter &target);
 	void lookAtFloor(void);
 	void clearFloor(void);
 

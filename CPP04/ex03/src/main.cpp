@@ -2,8 +2,9 @@
 #include "Cure.hpp"
 #include "Ice.hpp"
 #include "MateriaSource.hpp"
+#include "PrintHeader.hpp"
 
-int main() {
+void subjectTests() {
 	IMateriaSource *src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -30,6 +31,19 @@ int main() {
 	delete bob;
 	delete me;
 	delete src;
+
+	PrintHeader::printH1("Test", BLUE);
+	PrintHeader::printH1("Testi", BLUE);
+	std::cout << std::endl;
+	PrintHeader::printH2("Test", BLUE);
+	PrintHeader::printH2("Testissss", BLUE);
+	std::cout << std::endl;
+	PrintHeader::printH3("Test", BLUE);
+
+}
+
+int main() {
+	subjectTests();
 
 	return 0;
 }

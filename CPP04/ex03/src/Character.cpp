@@ -63,8 +63,8 @@ void Character::deleteInventory() {
 	}
 }
 
-void Character::use(size_t idx, ICharacter &target) {
-	if (idx < _inventory_size) {
+void Character::use(int idx, ICharacter &target) {
+	if (idx >= 0 && idx < static_cast<int>(_inventory_size)) {
 		if (_inventory[idx]) {
 			std::cout << getName() << ": ";
 			_inventory[idx]->use(target);
@@ -96,8 +96,8 @@ void Character::equip(AMateria *m) {
 			  << " Materia." << std::endl;
 }
 
-void Character::unequip(size_t idx) {
-	if (idx < _inventory_size) {
+void Character::unequip(int idx) {
+	if (idx >= 0 && idx < static_cast<int>(_inventory_size)) {
 		if (_inventory[idx]) {
 			moveItemtoFloor(idx);
 		} else {
