@@ -42,9 +42,11 @@ void MateriaSource::learnMateria(AMateria *m) {
 	for (size_t i = 0; i < _sources_size; i++) {
 		if (_sources[i] == NULL) {
 			_sources[i] = m->clone();
+			delete(m);
 			return;
 		}
 	}
+	delete(m);
 	std::cout << "Couldn't learn materia because materia source is full";
 }
 
