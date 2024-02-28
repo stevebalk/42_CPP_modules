@@ -7,6 +7,7 @@ void PrintHeader::printH1(const std::string text, const char* color) {
 	size_t offset_start = offset_end + text.length() % 2;
 
 	std::cout << color;
+	std::cout << std::endl;
 	std::cout << std::setfill(fill_char) << std::setw(width) << "" << std::endl;
 	std::cout << "*";
 	std::cout << std::setfill(' ') << std::setw(offset_start) << std::right << "";
@@ -17,7 +18,6 @@ void PrintHeader::printH1(const std::string text, const char* color) {
 	std::cout << "*";
 	std::cout << std::endl;
 	std::cout << std::setfill(fill_char) << std::setw(width) << "" << std::endl;
-	std::cout << std::endl;
 	std::cout << C_RESET;
 }
 
@@ -27,6 +27,7 @@ void PrintHeader::printH2(const std::string text, const char* color) {
 	size_t offset_start = offset_end + text.length() % 2;
 
 	std::cout << color;
+	std::cout << std::endl;
 	std::cout << std::setfill(fill_char) << std::setw(offset_start) << std::right << "";
 	std::cout << " ";
 	std::cout << BOLD;
@@ -34,7 +35,6 @@ void PrintHeader::printH2(const std::string text, const char* color) {
 	std::cout << C_RESET << color;
 	std::cout << " ";
 	std::cout << std::setw(offset_end) << std::right << "" << std::endl;
-	std::cout << std::endl;
 	std::cout << C_RESET;
 }
 
@@ -44,6 +44,7 @@ void PrintHeader::printH3(const std::string text, const char* color) {
 	size_t offset_start = offset_end + text.length() % 2;
 
 	std::cout << color;
+	std::cout << std::endl;
 	std::cout << std::setfill(fill_char) << std::setw(offset_start) << std::right << "";
 	std::cout << " ";
 	std::cout << BOLD;
@@ -51,6 +52,5 @@ void PrintHeader::printH3(const std::string text, const char* color) {
 	std::cout << C_RESET << color;
 	std::cout << " ";
 	std::cout << std::setw(offset_end) << std::right << "" << std::endl;
-	std::cout << std::endl;
 	std::cout << C_RESET;
 }

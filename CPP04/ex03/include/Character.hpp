@@ -14,6 +14,7 @@ public:
 	Character &operator=(const Character &rhs);
 
 	std::string const &getName() const;
+	void setName(const std::string &name);
 	void equip(AMateria *m);
 	void unequip(int idx);
 	void use(int idx, ICharacter &target);
@@ -30,7 +31,7 @@ private:
 
 	void InitalizeEmptyInventory();
 	void deleteInventory();
-	void moveItemtoFloor(size_t idx);
+	void moveItemtoFloor(AMateria *materia);
 };
 
 #endif // CHARACTER_HPP

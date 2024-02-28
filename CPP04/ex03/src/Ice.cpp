@@ -1,19 +1,8 @@
 #include "Ice.hpp"
 
-Ice::Ice() :
-		AMateria("ice") {}
-
-Ice::~Ice() {}
-
-Ice::Ice(const Ice &other) :
-		AMateria(other._type) {}
-
-Ice Ice::operator=(const Ice &rhs) {
-	if (this != &rhs) {
-		_type = rhs._type;
-	}
-	return *this;
-}
+/********************************************************************/
+/*                          MEMBER FUNCTIONS                        */
+/********************************************************************/
 
 AMateria *Ice::clone() const {
 	return (new Ice(*this));
@@ -22,4 +11,35 @@ AMateria *Ice::clone() const {
 void Ice::use(ICharacter &target) {
 	std::cout << "* shots an ice bolt at " << target.getName()
 			  << " *" << std::endl;
+}
+
+/********************************************************************/
+/*                          CONSTRUCTOR                             */
+/********************************************************************/
+
+Ice::Ice() :
+		AMateria("ice") {}
+
+/********************************************************************/
+/*                          DECONSTRUCTOR                           */
+/********************************************************************/
+
+Ice::~Ice() {}
+
+/********************************************************************/
+/*                          COPY CONSTRUCTOR                        */
+/********************************************************************/
+
+Ice::Ice(const Ice &other) :
+		AMateria(other._type) {}
+
+/********************************************************************/
+/*                          OPERATOR OVERLOAD                       */
+/********************************************************************/
+
+Ice Ice::operator=(const Ice &rhs) {
+	if (this != &rhs) {
+		_type = rhs._type;
+	}
+	return *this;
 }
