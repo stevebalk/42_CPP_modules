@@ -1,5 +1,9 @@
 #include "PrintHeader.hpp"
 
+/********************************************************************/
+/*                          MEMBER FUNCTIONS                        */
+/********************************************************************/
+
 void PrintHeader::printH1(const std::string text, const char* color) {
 	const char fill_char = '*';
 	const size_t width = 80;
@@ -53,4 +57,33 @@ void PrintHeader::printH3(const std::string text, const char* color) {
 	std::cout << " ";
 	std::cout << std::setw(offset_end) << std::right << "" << std::endl;
 	std::cout << C_RESET;
+}
+
+/********************************************************************/
+/*                          CONSTRUCTOR                             */
+/********************************************************************/
+
+PrintHeader::PrintHeader() {}
+
+/********************************************************************/
+/*                          DECONSTRUCTOR                           */
+/********************************************************************/
+
+PrintHeader::~PrintHeader() {}
+
+/********************************************************************/
+/*                          COPY CONSTRUCTOR                        */
+/********************************************************************/
+
+PrintHeader::PrintHeader(const PrintHeader &other) {
+	(void)other;
+}
+
+/********************************************************************/
+/*                          OPERATOR OVERLOAD                       */
+/********************************************************************/
+
+PrintHeader &PrintHeader::operator=(const PrintHeader &rhs) {
+	(void)rhs;
+	return *this;
 }

@@ -69,6 +69,8 @@ void Bureaucrat::executeForm(AForm const *form) const {
 /*                          CONSTRUCTOR                             */
 /********************************************************************/
 
+Bureaucrat::Bureaucrat() {}
+
 Bureaucrat::Bureaucrat(const std::string &name, const size_t grade) :
 		_name(name),
 		_grade(grade) {
