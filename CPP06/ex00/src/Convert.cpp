@@ -49,8 +49,8 @@ void Convert::convertInvalid(const std::string &str) {
 		std::cout << "float: " << std::numeric_limits<float>::quiet_NaN() << "f" << std::endl;
 		std::cout << "double: " << std::numeric_limits<double>::quiet_NaN() << std::endl;
 	} else if (str == "+inf" || str == "-inf" || str == "+inff" || str == "-inff") {
-		std::cout << "float: " << std::numeric_limits<float>::infinity << "f" << std::endl;
-		std::cout << "double: " << std::numeric_limits<double>::infinity << std::endl;
+		std::cout << "float: " << std::numeric_limits<float>::infinity() << "f" << std::endl;
+		std::cout << "double: " << std::numeric_limits<double>::infinity() << std::endl;
 	} else {
 		std::cout << "float: impossible" << std::endl;
 		std::cout << "double: impossible" << std::endl;
