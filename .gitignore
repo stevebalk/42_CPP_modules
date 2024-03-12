@@ -18,4 +18,5 @@ violence
 .header
 .clang-format
 interface
-
+build_script.sh
+fclean_script.sh
