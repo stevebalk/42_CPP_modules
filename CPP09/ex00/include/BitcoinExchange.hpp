@@ -16,6 +16,8 @@ public:
 	~BitcoinExchange();
 	BitcoinExchange &operator=(const BitcoinExchange &rhs);
 
+	std::string getDate() const;
+
 	double getExchangeRate(std::string data_line);
 	std::pair<double, double> getExchangeValue(std::string data_line);
 
@@ -31,7 +33,9 @@ public:
 
 private:
 	std::map<std::string, double> _exchangeData;
+	std::string _date;
 
+	void setDate(const std::string &str);
 	std::string stripWhitespace(const std::string &str);
 	bool isLeapYear(int year);
 	bool isValidDate(std::string date);

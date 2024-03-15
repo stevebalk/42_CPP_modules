@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
 			}
 			try {
 				std::pair<double, double> value = exchange.getExchangeValue(line); // value.first = amount, value.second = rate
-				std::cout << line.substr(0, line.find('|')) << "=> " << value.first << " = " << (value.first * value.second) << std::endl;
+				std::cout << exchange.getDate() << " => " << value.first << " = " << (value.first * value.second) << std::endl;
 			} catch (const std::exception &e) {
 				std::cerr << e.what() << std::endl;
 			}

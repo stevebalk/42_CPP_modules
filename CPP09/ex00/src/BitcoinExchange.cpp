@@ -4,6 +4,14 @@
 /*                          MEMBER FUNCTIONS                        */
 /********************************************************************/
 
+std::string BitcoinExchange::getDate() const {
+	return _date;
+}
+
+void BitcoinExchange::setDate(const std::string &str) {
+	_date = str;
+}
+
 std::string BitcoinExchange::stripWhitespace(const std::string &str) {
 	size_t firstNonWhitespace = str.find_first_not_of(" \t\n\r");
 	if (firstNonWhitespace == std::string::npos) {
@@ -18,14 +26,13 @@ bool BitcoinExchange::isLeapYear(int year) {
 }
 
 bool BitcoinExchange::isValidDate(std::string date) {
-	std::string striped_date = stripWhitespace(date);
-	if (striped_date.length() != 10 || striped_date[4] != '-' || striped_date[7] != '-') {
+	if (date.length() != 10 || date[4] != '-' || date[7] != '-') {
 		return false;
 	}
 	try {
-		int year = stot<int>(striped_date.substr(0, 4));
-		int month = stot<int>(striped_date.substr(5, 2));
-		int day = stot<int>(striped_date.substr(8, 2));
+		int year = stot<int>(date.substr(0, 4));
+		int month = stot<int>(date.substr(5, 2));
+		int day = stot<int>(date.substr(8, 2));
 
 		if (year < 0 || month < 1 || month > 12 || day < 1)
 			return false;
@@ -43,12 +50,13 @@ std::pair<std::string, double> BitcoinExchange::extractData(std::string line, ch
 	if (delimiter_position == std::string::npos) {
 		throw std::runtime_error("Error: Format delimiter Error");
 	}
-	std::string date = line.substr(0, delimiter_position);
-	std::string value = line.substr(delimiter_position + 1);
+	std::string date = stripWhitespace(line.substr(0, delimiter_position));
+	std::string value = stripWhitespace(line.substr(delimiter_position + 1));
 
 	if (!isValidDate(date)) {
 		throw std::runtime_error("Error: bad input => " + date);
 	}
+	setDate(date);
 
 	double value_num;
 	try {
@@ -92,13 +100,11 @@ double BitcoinExchange::getExchangeRate(std::string data_line) {
 	std::map<std::string, double>::iterator upper = _exchangeData.upper_bound(value.first);
 	if (upper != _exchangeData.begin()) {
 		--upper;
+	} else {
+		throw std::runtime_error("Error: no date found that is less or equal to the target date");
 	}
 
-	if (upper != _exchangeData.end()) {
-		return upper->second;
-	} else {
-		throw std::runtime_error("No date found that is less or equal to the target date");
-	}
+	return upper->second;
 }
 
 std::pair<double, double> BitcoinExchange::getExchangeValue(std::string data_line) {
@@ -106,7 +112,7 @@ std::pair<double, double> BitcoinExchange::getExchangeValue(std::string data_lin
 
 	std::pair<std::string, double> value = extractData(data_line, '|');
 
-	if (value.second > std::numeric_limits<int>::max()) {
+	if (value.second > 1000) {
 		throw std::runtime_error("Error: too large a number");
 	}
 
