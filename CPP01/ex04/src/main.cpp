@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
 			if (!inputFile.eof()) {
 				outputFile << '\n';
 			}
-		}
+		}	
 		inputFile.close();
 		outputFile.close();
 	} catch (const char *e) {
