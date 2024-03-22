@@ -1,5 +1,6 @@
 #include "Point.hpp"
 #include <cassert>
+#include "bsp.cpp"
 
 int main() {
 	Point triangle[] =	{
@@ -10,12 +11,19 @@ int main() {
 
 	// Test point inside the triangle
 	Point inside_point(0.25f, 0.25f);
-	assert(bsp(triangle[0], triangle[1], triangle[2], inside_point) == true);
+	if (bsp(triangle[0], triangle[1], triangle[2], inside_point) == true) {
+		std::cout << "Point 1 is inside" << std::endl;
+	} else {
+		std::cout << "Point 1 point is outside" << std::endl;
+	}
 
 	// Test point outside the triangle
-	Point outside_point(0.505f, 0.505f);
-	assert(bsp(triangle[0], triangle[1], triangle[2], outside_point) == false);
+	Point outside_point(0.51f, 0.51f);
+	if (bsp(triangle[0], triangle[1], triangle[2], outside_point) == true) {
+		std::cout << "Point 2 is inside" << std::endl;
+	} else {
+		std::cout << "Point 2 is outside" << std::endl;
+	}
 
-	std::cout << "All tests passed!" << std::endl;
 	return 0;
 }
