@@ -66,6 +66,15 @@ int main() {
 		std::cout << std::endl;
 	}
 	{
+		printHeader("Copy assignment operator", BLUE);
+		Dog dog1;
+		Dog dog2;
+		dog1.getBrain()->setIdea("I want food", 0);
+		std::cout << "Dog1 idea: " << dog1.getBrain()->getIdea(0) << std::endl;
+		dog2 = dog1;
+		std::cout << "Dog2 idea: " << dog2.getBrain()->getIdea(0) << std::endl;
+	}
+	{
 		printHeader("Animal array", BLUE);
 		const size_t array_size = 3 * 2;
 		Animal *animals[array_size];
